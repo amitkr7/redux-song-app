@@ -1,3 +1,5 @@
+import { combineRecucers } from 'redux';
+
 const songsReducer = () => {
   return [
     { title: 'Buleya', duration: '5:06' },
@@ -14,3 +16,8 @@ const selectedSongReducer = (selectedSong = null, action) => {
   }
   return selectedSong;
 };
+
+combineRecucers({
+  songs: songsReducer,
+  selectedSong: selectedSongReducer,
+});
